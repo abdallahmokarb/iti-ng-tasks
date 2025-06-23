@@ -1,0 +1,42 @@
+[
+  {
+    "profilePic": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740",
+    "username": "Hassan ELdash",
+    "email": "hassan@iti.com",
+    "phone": "01000000001",
+    "birthdate": "1995-01-01",
+    "role": "admin"
+  },
+  {
+    "profilePic": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740",
+    "username": "abdallah",
+    "email": "abdallah@gmail.com",
+    "phone": "01000000002",
+    "birthdate": "1997-01-01",
+    "role": "user"
+  },
+  {
+    "profilePic": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740",
+    "username": "ahmed",
+    "email": "ahmed@gmail.com",
+    "phone": "01000000003",
+    "birthdate": "1999-01-01",
+    "role": "moderator"
+  },
+  {
+    "profilePic": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740",
+    "username": "ali",
+    "email": "ali@gmail.com",
+    "phone": "01000000003",
+    "birthdate": "2000-01-01",
+    "role": "user"
+  },
+  {
+    "profilePic": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740",
+    "username": "omar",
+    "email": "omar@gmail.com",
+    "phone": "01000000003",
+    "birthdate": "2001-01-01",
+    "role": "user"
+  }
+]

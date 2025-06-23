@@ -1,0 +1,46 @@
+<a
+  class="cursor-pointer bg-white rounded-xl shadow-sm hover:shadow-md transition p-5 w-72 flex flex-col items-center text-center no-underline"
+  [routerLink]="['/product-details', product.id]"
+>
+  <div
+    [ngClass]="{
+      'bg-green-100 text-green-800': product.stock > 0,
+      'bg-red-100 text-red-800': product.stock === 0
+    }"
+    class="text-sm font-semibold px-3 py-1 rounded-full self-start mb-3"
+  >
+    {{ product.stock > 0 ? 'In stock' : 'Out of stock' }}
+  </div>
+
+  <img
+    [src]="product.images[0]"
+    [alt]="product.title"
+    class="w-36 h-36 object-contain mb-4"
+  />
+
+  <h2 class="text-lg font-bold text-gray-900">{{ product.title }}</h2>
+  <p class="text-sm text-gray-500 mb-2">{{ product.description }}</p>
+
+  <p class="text-xl font-semibold text-gray-800 mb-2">
+    {{ product.price | currency:'EGP' }}
+  </p>
+
+  <div class="flex justify-center gap-1 mb-4">
+    <ng-container *ngFor="let star of [].constructor(product.rating)">
+      <span class="text-green-500 text-lg">★</span>
+    </ng-container>
+  </div>
+</a>
+
+<!-- Add to Cart button outside the link -->
+<button
+  (click)="AddToCart(); $event.stopPropagation()"
+  [disabled]="product.stock === 0 || cartQuantity >= product.stock"
+  [ngClass]="{
+    'bg-blue-700 hover:bg-blue-800': product.stock > 0 && cartQuantity < product.stock,
+    'bg-gray-400 cursor-not-allowed': product.stock === 0 || cartQuantity >= product.stock
+  }"
+  class="text-white font-medium px-6 w-full py-2 rounded-full transition mt-2"
+>
+  Add to Cart
+</button>

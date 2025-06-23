@@ -1,0 +1,44 @@
+<header class="bg-white shadow fixed top-0 left-0 w-full z-50">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+    <a class="text-2xl font-bold text-blue-700">Abdallah Mokarb</a>
+
+    <nav class="hidden md:flex space-x-6 text-gray-700">
+      <a
+        routerLink=""
+        routerLinkActive="text-blue-500"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="hover:text-blue-700 transition"
+        >Home</a
+      >
+
+      <a routerLink="/products" routerLinkActive="text-blue-500" class=" "
+        >Products</a
+      >
+      <a routerLink="/cart" routerLinkActive="text-blue-500" class=" ">Cart</a>
+      <a routerLink="/login" routerLinkActive="text-blue-500">Login</a>
+      <a routerLink="/register" routerLinkActive="text-blue-500" class=" "
+        >Register</a
+      >
+      <a
+        *ngIf="auth.user()?.role === 'admin'"
+        routerLinkActive="text-blue-500"
+        routerLink="/admin"
+        >Admin Panel</a
+      >
+    </nav>
+
+    <button class="md:hidden text-gray-700 focus:outline-none">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+</header>

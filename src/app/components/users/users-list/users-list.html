@@ -1,0 +1,56 @@
+<div class="p-2 max-w-7xl mx-auto">
+  <h2 class="text-3xl font-semibold mb-6 text-center text-gray-800">Users</h2>
+
+  <div class="mb-8 flex flex-col md:flex-row items-center justify-center gap-4">
+    <input
+      [(ngModel)]="searchEmail"
+      type="text"
+      placeholder="Search by email"
+      class="w-full md:w-1/3 border border-gray-300 px-4 py-2 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+    />
+    <button
+      (click)="search()"
+      class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow-md transition"
+    >
+      Search
+    </button>
+    <button
+      *ngIf="searchEmail"
+      (click)="reset()"
+      class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded shadow-md transition"
+    >
+      Reset
+    </button>
+  </div>
+
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div
+      *ngFor="let user of users; trackBy: trackById"
+      class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 flex flex-col items-center text-center"
+    >
+      <img
+        [src]="user.profilePic"
+        alt="Profile"
+        class="w-20 h-20 rounded-full mb-4 border-2 border-blue-200"
+      />
+
+      <span
+        [ngClass]="{
+          'bg-red-400': user.role === 'admin',
+          'bg-green-300': user.role === 'user',
+          'bg-yellow-300': user.role === 'moderator'
+        }"
+        class="text-white text-xs px-3 py-1 rounded-lg font-medium uppercase tracking-wide"
+      >
+        {{ user.role }}
+      </span>
+
+      <h3 class="text-lg font-semibold text-gray-800 mb-1">
+        {{ user.username }}
+      </h3>
+      <p class="text-gray-500 text-sm mb-1">{{ user.email }}</p>
+      <p class="text-gray-500 text-sm mb-1">{{ user.phone }}</p>
+      <p class="text-gray-500 text-sm mb-2">{{ user.birthdate }}</p>
+    </div>
+  </div>
+</div>

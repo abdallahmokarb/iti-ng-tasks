@@ -1,0 +1,12 @@
+<h1 class="text-4xl pt-20 font-bold text-center text-gray-900">
+  Abdallah Store
+</h1>
+
+<div class="flex flex-wrap gap-6 justify-center mt-6 py-10">
+  <app-product-card
+    *ngFor="let p of products"
+    [product]="p"
+    [cartQuantity]="getQuantityInCart(p.id)"
+    (addToCart)="addToCart($event)"
+  />
+</div>
